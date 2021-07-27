@@ -41,7 +41,7 @@
                 <input
                   type="radio"
                   name="diameter"
-                  :value="{item.value}"
+                  :value="item.value"
                   class="visually-hidden"
                 />
                 <span>{{ item.name }}</span>
