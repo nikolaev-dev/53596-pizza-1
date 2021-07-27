@@ -17,7 +17,7 @@
                 <input
                   type="radio"
                   name="dought"
-                  value="{item.value}"
+                  :value="item.value"
                   class="visually-hidden"
                   checked
                 />
@@ -65,7 +65,12 @@
                   :key="item.value"
                   class="radio ingridients__input"
                 >
-                  <input type="radio" name="sauce" value="tomato" checked />
+                  <input
+                    type="radio"
+                    name="sauce"
+                    :value="item.value"
+                    checked
+                  />
                   <span> {{ item.name }}</span>
                 </label>
               </div>
@@ -79,9 +84,9 @@
                     :key="item.name"
                     class="ingridients__item"
                   >
-                    <span :class="`filling filling--${item.value}`">{{
-                        item.name
-                      }}</span>
+                    <span :class="`filling filling--${item.value}`">
+                      {{ item.name }}
+                    </span>
 
                     <div class="counter counter--orange ingridients__counter">
                       <button
