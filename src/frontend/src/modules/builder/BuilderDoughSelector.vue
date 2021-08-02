@@ -27,26 +27,7 @@
 <script>
 export default {
   name: "BuilderDoughSelector",
-  data: function () {
-    return {
-      dough: [
-        {
-          name: "Тонкое",
-          image: "/public/img/dough-light.svg",
-          description: "Из твердых сортов пшеницы",
-          price: 300,
-          value: "light",
-        },
-        {
-          name: "Толстое",
-          image: "/public/img/dough-large.svg",
-          description: "Из твердых сортов пшеницы",
-          price: 300,
-          value: "large",
-        },
-      ],
-    };
-  },
+  props: ["dough"],
 };
 </script>
 

@@ -25,30 +25,7 @@
 <script>
 export default {
   name: "BuilderSizeSelector",
-  data: function () {
-    return {
-      sizes: [
-        {
-          name: "23 см",
-          image: "/public/img/diameter.svg",
-          multiplier: 1,
-          value: "small",
-        },
-        {
-          name: "32 см",
-          image: "/public/img/diameter.svg",
-          multiplier: 2,
-          value: "normal",
-        },
-        {
-          name: "45 см",
-          image: "/public/img/diameter.svg",
-          multiplier: 3,
-          value: "big",
-        },
-      ],
-    };
-  },
+  props: ["sizes"],
 };
 </script>
 
