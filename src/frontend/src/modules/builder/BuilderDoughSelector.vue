@@ -12,9 +12,10 @@
           <input
             type="radio"
             name="dought"
-            value="{item.value}"
             class="visually-hidden"
-            checked
+            :value="item.value"
+            :checked="item.value == value"
+            @change="$emit('input', $event.target.value)"
           />
           <b>{{ item.name }}</b>
           <span>{{ item.description }}</span>
@@ -27,7 +28,7 @@
 <script>
 export default {
   name: "BuilderDoughSelector",
-  props: ["dough"],
+  props: ["dough", "value"],
 };
 </script>
 

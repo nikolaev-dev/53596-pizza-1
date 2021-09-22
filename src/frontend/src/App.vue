@@ -1,20 +1,30 @@
 <template>
-  <Builder
-    :dough="dough"
-    :ingredients="ingredients"
-    :sauces="sauces"
-    :sizes="sizes"
-  />
+  <div>
+    <AppLayout />
+
+    <Builder
+      :dough="dough"
+      :ingredients="ingredients"
+      :sauces="sauces"
+      :sizes="sizes"
+      v-model="pizza"
+    />
+  </div>
 </template>
 
 <script>
 import Builder from "./modules/builder/Builder";
-
+import AppLayout from "./layouts/AppLayout";
 export default {
   name: "App",
-  components: { Builder },
+  components: { Builder, AppLayout },
   data: function () {
     return {
+      pizza: {
+        dough: "light",
+        size: "small",
+        sauces: "tomato",
+      },
       dough: [
         {
           name: "Тонкое",
@@ -127,10 +137,12 @@ export default {
         {
           name: "Томатный",
           price: 50,
+          value: "tomato",
         },
         {
           name: "Сливочный",
           price: 50,
+          value: "creamy",
         },
       ],
       sizes: [

@@ -12,8 +12,10 @@
           <input
             type="radio"
             name="diameter"
-            value="{item.value}"
             class="visually-hidden"
+            :value="item.value"
+            :checked="item.value == value"
+            @change="$emit('input', $event.target.value)"
           />
           <span>{{ item.name }}</span>
         </label>
@@ -25,7 +27,7 @@
 <script>
 export default {
   name: "BuilderSizeSelector",
-  props: ["sizes"],
+  props: ["sizes", "value"],
 };
 </script>
 

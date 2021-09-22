@@ -4,11 +4,12 @@
       <div class="content__wrapper">
         <h1 class="title title--big">Конструктор пиццы</h1>
 
-        <BuilderDoughSelector :dough="dough" />
-        <BuilderSizeSelector :sizes="sizes" />
+        <BuilderDoughSelector :dough="dough" v-model="value.dough" />
+        <BuilderSizeSelector :sizes="sizes" v-model="value.size" />
         <BuilderIngredientsSelector
           :ingredients="ingredients"
           :sauces="sauces"
+          v-model="value.sauce"
         />
         <BuilderPizzaView />
       </div>
@@ -24,7 +25,7 @@ import BuilderSizeSelector from "./BuilderSizeSelector";
 
 export default {
   name: "Builder",
-  props: ["dough", "ingredients", "sauces", "sizes"],
+  props: ["dough", "ingredients", "sauces", "sizes", "value"],
   components: {
     BuilderDoughSelector,
     BuilderIngredientsSelector,
